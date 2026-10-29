@@ -3,130 +3,309 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>โครงการ ไทยช่วยไทย ลดค่าครองชีพ จังหวัดสุโขทัย</title>
+    <title>ข้อมูลโครงการ ไทยช่วยไทย ลดค่าครองชีพ จังหวัดสุโขทัย</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Sarabun', sans-serif; }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col justify-between">
+<body class="bg-slate-100 text-slate-800 min-h-screen flex flex-col justify-between">
 
-    <header class="bg-gradient-to-r from-blue-700 to-indigo-800 text-white shadow-md">
-        <div class="max-w-4xl mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+    <!-- Header -->
+    <header class="bg-[#0b4f6c] text-white shadow-md">
+        <div class="max-w-6xl mx-auto px-4 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
             <div class="flex items-center space-x-4 text-center md:text-left">
-                <div class="bg-white p-2 rounded-full shadow-md flex items-center justify-center w-16 h-16 shrink-0 mx-auto md:mx-0">
-                    <svg class="w-10 h-10 text-blue-700" fill="currentColor" viewBox="0 0 24 24">
+                <div class="bg-white p-2 rounded-full shadow flex items-center justify-center w-14 h-14 shrink-0 mx-auto md:mx-0">
+                    <svg class="w-8 h-8 text-[#0b4f6c]" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
                     </svg>
                 </div>
                 <div>
-                    <div class="text-xs font-semibold text-blue-200 tracking-wider uppercase">สำนักงานพาณิชย์จังหวัดสุโขทัย</div>
+                    <div class="text-xs font-medium text-blue-200 uppercase tracking-wider">สำนักงานพาณิชย์จังหวัดสุโขทัย</div>
                     <h1 class="text-xl md:text-2xl font-bold tracking-tight">ข้อมูลโครงการ "ไทยช่วยไทย ลดค่าครองชีพ"</h1>
+                    <p class="text-sm text-blue-100">ประจำเดือนพฤศจิกายน 2569</p>
                 </div>
             </div>
-            <div class="bg-blue-900/60 border border-blue-400/30 px-4 py-2 rounded-xl text-center">
-                <span class="block text-xs text-blue-200">ปีงบประมาณ พ.ศ. 2570 (รอบที่ 2)</span>
-                <span class="font-bold text-amber-300 text-sm">ประจำเดือนพฤศจิกายน 2569</span>
+            <div class="bg-amber-500 text-slate-900 font-bold px-4 py-2 rounded-xl text-sm shadow-sm text-center">
+                ปีงบประมาณ พ.ศ. 2570 (รอบที่ 2)
             </div>
         </div>
     </header>
 
-    <main class="max-w-4xl mx-auto px-4 py-8 flex-grow w-full">
-        <div class="mb-6">
-            <input type="text" id="searchInput" placeholder="🔍 ค้นหาตามอำเภอ, ตำบล หรือสถานที่จัดงาน..." 
-                class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm text-sm"
+    <!-- Main Dashboard Container -->
+    <main class="max-w-6xl mx-auto px-4 py-8 flex-grow w-full space-y-6">
+
+        <!-- Summary Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-200 flex items-center justify-between">
+                <div>
+                    <p class="text-xs text-slate-500 font-medium uppercase">จุดจำหน่ายทั้งหมด</p>
+                    <h3 class="text-2xl font-bold text-slate-800 mt-1">12 <span class="text-sm font-normal text-slate-500">จุดบริการ</span></h3>
+                </div>
+                <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center font-bold text-lg">📍</div>
+            </div>
+
+            <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-200 flex items-center justify-between">
+                <div>
+                    <p class="text-xs text-slate-500 font-medium uppercase">อำเภอที่ครอบคลุม</p>
+                    <h3 class="text-2xl font-bold text-slate-800 mt-1">9 <span class="text-sm font-normal text-slate-500">อำเภอ</span></h3>
+                </div>
+                <div class="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center font-bold text-lg">🗺️</div>
+            </div>
+
+            <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-200 flex items-center justify-between">
+                <div>
+                    <p class="text-xs text-slate-500 font-medium uppercase">ช่วงเวลาดำเนินงาน</p>
+                    <h3 class="text-lg font-bold text-slate-800 mt-1">4 - 26 พ.ย. 69</h3>
+                </div>
+                <div class="w-12 h-12 bg-amber-50 text-amber-600 rounded-xl flex items-center justify-center font-bold text-lg">📅</div>
+            </div>
+        </div>
+
+        <!-- Highlight Products Section -->
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-5">
+            <h2 class="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
+                <span>⭐ สินค้าไฮไลท์ราคาพิเศษ</span>
+                <span class="text-xs font-normal text-slate-500">(เปรียบเทียบราคาจำหน่ายกับราคาปกติ)</span>
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                
+                <!-- Item 1 -->
+                <div class="bg-slate-50 border border-slate-200 rounded-xl p-3 flex flex-col justify-between">
+                    <div>
+                        <p class="text-xs font-semibold text-slate-600">น้ำมันปาล์ม (ขวด 1 ลิตร)</p>
+                        <p class="text-xs text-slate-400 mt-1">ปกติ <span class="line-through">57 บาท</span></p>
+                    </div>
+                    <div class="mt-3 text-right">
+                        <span class="text-lg font-bold text-emerald-600">39 บาท</span>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="bg-slate-50 border border-slate-200 rounded-xl p-3 flex flex-col justify-between">
+                    <div>
+                        <p class="text-xs font-semibold text-slate-600">ไข่ไก่ เบอร์ 2 (แผง 30 ฟอง)</p>
+                        <p class="text-xs text-slate-400 mt-1">ปกติ <span class="line-through">120 บาท</span></p>
+                    </div>
+                    <div class="mt-3 text-right">
+                        <span class="text-lg font-bold text-emerald-600">100 บาท</span>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="bg-slate-50 border border-slate-200 rounded-xl p-3 flex flex-col justify-between">
+                    <div>
+                        <p class="text-xs font-semibold text-slate-600">ข้าวสารบรรจุถุง (ถุง 5 กก.)</p>
+                        <p class="text-xs text-slate-400 mt-1">ปกติ <span class="line-through">145 บาท</span></p>
+                    </div>
+                    <div class="mt-3 text-right">
+                        <span class="text-lg font-bold text-emerald-600">90 บาท</span>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="bg-slate-50 border border-slate-200 rounded-xl p-3 flex flex-col justify-between">
+                    <div>
+                        <p class="text-xs font-semibold text-slate-600">น้ำตาลทรายขาว (ถุง 1 กก.)</p>
+                        <p class="text-xs text-slate-400 mt-1">ปกติ <span class="line-through">30 บาท</span></p>
+                    </div>
+                    <div class="mt-3 text-right">
+                        <span class="text-lg font-bold text-emerald-600">18 บาท</span>
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="bg-slate-50 border border-slate-200 rounded-xl p-3 flex flex-col justify-between">
+                    <div>
+                        <p class="text-xs font-semibold text-slate-600">ปลากระป๋อง (แพ็ก 10 กระป๋อง)</p>
+                        <p class="text-xs text-slate-400 mt-1">ปกติ <span class="line-through">180 บาท</span></p>
+                    </div>
+                    <div class="mt-3 text-right">
+                        <span class="text-lg font-bold text-emerald-600">110 บาท</span>
+                    </div>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="bg-slate-50 border border-slate-200 rounded-xl p-3 flex flex-col justify-between">
+                    <div>
+                        <p class="text-xs font-semibold text-slate-600">บะหมี่กึ่งสำเร็จรูป (แพ็ก 10 ซอง)</p>
+                        <p class="text-xs text-slate-400 mt-1">ปกติ <span class="line-through">66 บาท</span></p>
+                    </div>
+                    <div class="mt-3 text-right">
+                        <span class="text-lg font-bold text-emerald-600">42 บาท</span>
+                    </div>
+                </div>
+
+                <!-- Item 7 -->
+                <div class="bg-slate-50 border border-slate-200 rounded-xl p-3 flex flex-col justify-between">
+                    <div>
+                        <p class="text-xs font-semibold text-slate-600">ผงซักฟอก ขนาด 900 กรัม</p>
+                        <p class="text-xs text-slate-400 mt-1">ปกติ <span class="line-through">45 บาท</span></p>
+                    </div>
+                    <div class="mt-3 text-right">
+                        <span class="text-lg font-bold text-emerald-600">30 บาท</span>
+                    </div>
+                </div>
+
+                <!-- Item 8 -->
+                <div class="bg-slate-50 border border-slate-200 rounded-xl p-3 flex flex-col justify-between">
+                    <div>
+                        <p class="text-xs font-semibold text-slate-600">น้ำยาปรับผ้านุ่ม (ขนาด 500 มล.)</p>
+                        <p class="text-xs text-slate-400 mt-1">ปกติ <span class="line-through">18 บาท</span></p>
+                    </div>
+                    <div class="mt-3 text-right">
+                        <span class="text-lg font-bold text-emerald-600">12 บาท</span>
+                    </div>
+                </div>
+
+                <!-- Item 9 -->
+                <div class="bg-slate-50 border border-slate-200 rounded-xl p-3 flex flex-col justify-between">
+                    <div>
+                        <p class="text-xs font-semibold text-slate-600">ซีอิ๊วขาว (ขนาด 700 มล.)</p>
+                        <p class="text-xs text-slate-400 mt-1">ปกติ <span class="line-through">45 บาท</span></p>
+                    </div>
+                    <div class="mt-3 text-right">
+                        <span class="text-lg font-bold text-emerald-600">35 บาท</span>
+                    </div>
+                </div>
+
+                <!-- Item 10 -->
+                <div class="bg-slate-50 border border-slate-200 rounded-xl p-3 flex flex-col justify-between">
+                    <div>
+                        <p class="text-xs font-semibold text-slate-600">น้ำยาล้างจาน (ขนาด 300 มล.)</p>
+                        <p class="text-xs text-slate-400 mt-1">ปกติ <span class="line-through">20 บาท</span></p>
+                    </div>
+                    <div class="mt-3 text-right">
+                        <span class="text-lg font-bold text-emerald-600">12 บาท</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200">
+            <input type="text" id="searchInput" placeholder="🔍 ค้นหาตามอำเภอ, ตำบล, หรือสถานที่จัดงาน..." 
+                class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#0b4f6c] text-sm bg-slate-50"
                 onkeyup="filterTable()">
         </div>
 
+        <!-- Detailed Table Card -->
         <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
-            <div class="p-4 bg-slate-100 border-b border-slate-200 font-bold text-slate-700 flex justify-between items-center">
-                <span>ตารางจุดจำหน่ายสินค้าราคาประหยัด</span>
-                <span class="text-xs text-slate-500 font-normal">ทั้งหมด 12 จุดบริการ</span>
+            <div class="p-4 bg-slate-50 border-b border-slate-200 font-bold text-slate-700 flex justify-between items-center">
+                <span>ตารางแผนดำเนินงานจุดจำหน่ายสินค้าราคาประหยัด</span>
+                <span class="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full font-semibold">พฤศจิกายน 2569</span>
             </div>
 
             <div class="overflow-x-auto">
                 <table class="w-full text-left border-collapse" id="scheduleTable">
                     <thead>
-                        <tr class="bg-slate-50 text-slate-600 text-xs uppercase tracking-wider border-b border-slate-200">
-                            <th class="py-3 px-4 text-center">ครั้งที่</th>
-                            <th class="py-3 px-4">วันที่จัดงาน</th>
-                            <th class="py-3 px-4">สถานที่ / จุดจำหน่าย</th>
-                            <th class="py-3 px-4">ตำบล / อำเภอ</th>
+                        <tr class="bg-slate-100 text-slate-600 text-xs uppercase tracking-wider border-b border-slate-200">
+                            <th class="py-3.5 px-4 text-center">ครั้งที่</th>
+                            <th class="py-3.5 px-4">วันที่จัดงาน</th>
+                            <th class="py-3.5 px-4">สถานที่ / จุดจำหน่าย</th>
+                            <th class="py-3.5 px-4">ตำบล</th>
+                            <th class="py-3.5 px-4">อำเภอ</th>
+                            <th class="py-3.5 px-4">จังหวัด</th>
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-slate-100 text-sm">
-                        <tr class="hover:bg-blue-50/50 transition">
-                            <td class="py-3.5 px-4 text-center font-bold text-blue-600">1</td>
+                        <tr class="hover:bg-slate-50 transition">
+                            <td class="py-3.5 px-4 text-center font-bold text-[#0b4f6c]">1</td>
                             <td class="py-3.5 px-4 whitespace-nowrap font-medium text-slate-700">อ. 4 พ.ย. 2569</td>
                             <td class="py-3.5 px-4 font-semibold text-slate-800">ที่ว่าการอำเภอทุ่งเสลี่ยม</td>
-                            <td class="py-3.5 px-4 text-slate-600">ต.ทุ่งเสลี่ยม อ.ทุ่งเสลี่ยม</td>
+                            <td class="py-3.5 px-4 text-slate-600">ทุ่งเสลี่ยม</td>
+                            <td class="py-3.5 px-4 text-slate-600">ทุ่งเสลี่ยม</td>
+                            <td class="py-3.5 px-4 text-slate-600">สุโขทัย</td>
                         </tr>
-                        <tr class="hover:bg-blue-50/50 transition">
-                            <td class="py-3.5 px-4 text-center font-bold text-blue-600">2</td>
+                        <tr class="hover:bg-slate-50 transition">
+                            <td class="py-3.5 px-4 text-center font-bold text-[#0b4f6c]">2</td>
                             <td class="py-3.5 px-4 whitespace-nowrap font-medium text-slate-700">จ. 9 พ.ย. 2569</td>
                             <td class="py-3.5 px-4 font-semibold text-slate-800">องค์การบริหารส่วนตำบลวังน้ำขาว</td>
-                            <td class="py-3.5 px-4 text-slate-600">ต.วังน้ำขาว อ.บ้านด่านลานหอย</td>
+                            <td class="py-3.5 px-4 text-slate-600">วังน้ำขาว</td>
+                            <td class="py-3.5 px-4 text-slate-600">บ้านด่านลานหอย</td>
+                            <td class="py-3.5 px-4 text-slate-600">สุโขทัย</td>
                         </tr>
-                        <tr class="hover:bg-blue-50/50 transition">
-                            <td class="py-3.5 px-4 text-center font-bold text-blue-600">3</td>
+                        <tr class="hover:bg-slate-50 transition">
+                            <td class="py-3.5 px-4 text-center font-bold text-[#0b4f6c]">3</td>
                             <td class="py-3.5 px-4 whitespace-nowrap font-medium text-slate-700">อ. 10 พ.ย. 2569</td>
                             <td class="py-3.5 px-4 font-semibold text-slate-800">องค์การบริหารส่วนตำบลทับผึ้ง</td>
-                            <td class="py-3.5 px-4 text-slate-600">ต.ทับผึ้ง อ.ศรีสำโรง</td>
+                            <td class="py-3.5 px-4 text-slate-600">ทับผึ้ง</td>
+                            <td class="py-3.5 px-4 text-slate-600">ศรีสำโรง</td>
+                            <td class="py-3.5 px-4 text-slate-600">สุโขทัย</td>
                         </tr>
-                        <tr class="hover:bg-blue-50/50 transition">
-                            <td class="py-3.5 px-4 text-center font-bold text-blue-600">4</td>
+                        <tr class="hover:bg-slate-50 transition">
+                            <td class="py-3.5 px-4 text-center font-bold text-[#0b4f6c]">4</td>
                             <td class="py-3.5 px-4 whitespace-nowrap font-medium text-slate-700">พ. 11 พ.ย. 2569</td>
                             <td class="py-3.5 px-4 font-semibold text-slate-800">องค์การบริหารส่วนตำบลบ้านสวน</td>
-                            <td class="py-3.5 px-4 text-slate-600">ต.บ้านสวน อ.เมืองสุโขทัย</td>
+                            <td class="py-3.5 px-4 text-slate-600">บ้านสวน</td>
+                            <td class="py-3.5 px-4 text-slate-600">เมืองสุโขทัย</td>
+                            <td class="py-3.5 px-4 text-slate-600">สุโขทัย</td>
                         </tr>
-                        <tr class="hover:bg-blue-50/50 transition">
-                            <td class="py-3.5 px-4 text-center font-bold text-blue-600">5</td>
+                        <tr class="hover:bg-slate-50 transition">
+                            <td class="py-3.5 px-4 text-center font-bold text-[#0b4f6c]">5</td>
                             <td class="py-3.5 px-4 whitespace-nowrap font-medium text-slate-700">พฤ. 12 พ.ย. 2569</td>
                             <td class="py-3.5 px-4 font-semibold text-slate-800">องค์การบริหารส่วนตำบลหนองกลับ</td>
-                            <td class="py-3.5 px-4 text-slate-600">ต.หนองกลับ อ.สวรรคโลก</td>
+                            <td class="py-3.5 px-4 text-slate-600">หนองกลับ</td>
+                            <td class="py-3.5 px-4 text-slate-600">สวรรคโลก</td>
+                            <td class="py-3.5 px-4 text-slate-600">สุโขทัย</td>
                         </tr>
-                        <tr class="hover:bg-blue-50/50 transition">
-                            <td class="py-3.5 px-4 text-center font-bold text-blue-600">6</td>
+                        <tr class="hover:bg-slate-50 transition">
+                            <td class="py-3.5 px-4 text-center font-bold text-[#0b4f6c]">6</td>
                             <td class="py-3.5 px-4 whitespace-nowrap font-medium text-slate-700">ศ. 13 พ.ย. 2569</td>
                             <td class="py-3.5 px-4 font-semibold text-slate-800">สหกรณ์นิคมหนองบัว</td>
-                            <td class="py-3.5 px-4 text-slate-600">ต.หนองบัว อ.ศรีนคร</td>
+                            <td class="py-3.5 px-4 text-slate-600">หนองบัว</td>
+                            <td class="py-3.5 px-4 text-slate-600">ศรีนคร</td>
+                            <td class="py-3.5 px-4 text-slate-600">สุโขทัย</td>
                         </tr>
-                        <tr class="hover:bg-blue-50/50 transition">
-                            <td class="py-3.5 px-4 text-center font-bold text-blue-600">7</td>
+                        <tr class="hover:bg-slate-50 transition">
+                            <td class="py-3.5 px-4 text-center font-bold text-[#0b4f6c]">7</td>
                             <td class="py-3.5 px-4 whitespace-nowrap font-medium text-slate-700">จ. 16 พ.ย. 2569</td>
                             <td class="py-3.5 px-4 font-semibold text-slate-800">องค์การบริหารส่วนตำบลบ้านแก่ง</td>
-                            <td class="py-3.5 px-4 text-slate-600">ต.บ้านแก่ง อ.ศรีสัชนาลัย</td>
+                            <td class="py-3.5 px-4 text-slate-600">บ้านแก่ง</td>
+                            <td class="py-3.5 px-4 text-slate-600">ศรีสัชนาลัย</td>
+                            <td class="py-3.5 px-4 text-slate-600">สุโขทัย</td>
                         </tr>
-                        <tr class="hover:bg-blue-50/50 transition">
-                            <td class="py-3.5 px-4 text-center font-bold text-blue-600">8</td>
+                        <tr class="hover:bg-slate-50 transition">
+                            <td class="py-3.5 px-4 text-center font-bold text-[#0b4f6c]">8</td>
                             <td class="py-3.5 px-4 whitespace-nowrap font-medium text-slate-700">อ. 17 พ.ย. 2569</td>
                             <td class="py-3.5 px-4 font-semibold text-slate-800">องค์การบริหารส่วนตำบลสามพวง</td>
-                            <td class="py-3.5 px-4 text-slate-600">ต.สามพวง อ.คีรีมาศ</td>
+                            <td class="py-3.5 px-4 text-slate-600">สามพวง</td>
+                            <td class="py-3.5 px-4 text-slate-600">คีรีมาศ</td>
+                            <td class="py-3.5 px-4 text-slate-600">สุโขทัย</td>
                         </tr>
-                        <tr class="hover:bg-blue-50/50 transition">
-                            <td class="py-3.5 px-4 text-center font-bold text-blue-600">9</td>
+                        <tr class="hover:bg-slate-50 transition">
+                            <td class="py-3.5 px-4 text-center font-bold text-[#0b4f6c]">9</td>
                             <td class="py-3.5 px-4 whitespace-nowrap font-medium text-slate-700">พ. 18 พ.ย. 2569</td>
                             <td class="py-3.5 px-4 font-semibold text-slate-800">องค์การบริหารส่วนตำบลวังตะคร้อ</td>
-                            <td class="py-3.5 px-4 text-slate-600">ต.วังตะคร้อ อ.บ้านด่านลานหอย</td>
+                            <td class="py-3.5 px-4 text-slate-600">วังตะคร้อ</td>
+                            <td class="py-3.5 px-4 text-slate-600">บ้านด่านลานหอย</td>
+                            <td class="py-3.5 px-4 text-slate-600">สุโขทัย</td>
                         </tr>
-                        <tr class="hover:bg-blue-50/50 transition">
-                            <td class="py-3.5 px-4 text-center font-bold text-blue-600">10</td>
+                        <tr class="hover:bg-slate-50 transition">
+                            <td class="py-3.5 px-4 text-center font-bold text-[#0b4f6c]">10</td>
                             <td class="py-3.5 px-4 whitespace-nowrap font-medium text-slate-700">พฤ. 19 พ.ย. 2569</td>
                             <td class="py-3.5 px-4 font-semibold text-slate-800">องค์การบริหารส่วนตำบลนาขุนไกร</td>
-                            <td class="py-3.5 px-4 text-slate-600">ต.นาขุนไกร อ.ศรีสำโรง</td>
+                            <td class="py-3.5 px-4 text-slate-600">นาขุนไกร</td>
+                            <td class="py-3.5 px-4 text-slate-600">ศรีสำโรง</td>
+                            <td class="py-3.5 px-4 text-slate-600">สุโขทัย</td>
                         </tr>
-                        <tr class="hover:bg-blue-50/50 transition">
-                            <td class="py-3.5 px-4 text-center font-bold text-blue-600">11</td>
+                        <tr class="hover:bg-slate-50 transition">
+                            <td class="py-3.5 px-4 text-center font-bold text-[#0b4f6c]">11</td>
                             <td class="py-3.5 px-4 whitespace-nowrap font-medium text-slate-700">ศ. 20 พ.ย. 2569</td>
                             <td class="py-3.5 px-4 font-semibold text-slate-800">เทศบาลตำบลเขาแก้วศรีสมบูรณ์</td>
-                            <td class="py-3.5 px-4 text-slate-600">ต.เขาแก้วศรีสมบูรณ์ อ.ทุ่งเสลี่ยม</td>
+                            <td class="py-3.5 px-4 text-slate-600">เขาแก้วศรีสมบูรณ์</td>
+                            <td class="py-3.5 px-4 text-slate-600">ทุ่งเสลี่ยม</td>
+                            <td class="py-3.5 px-4 text-slate-600">สุโขทัย</td>
                         </tr>
-                        <tr class="hover:bg-blue-50/50 transition">
-                            <td class="py-3.5 px-4 text-center font-bold text-blue-600">12</td>
+                        <tr class="hover:bg-slate-50 transition">
+                            <td class="py-3.5 px-4 text-center font-bold text-[#0b4f6c]">12</td>
                             <td class="py-3.5 px-4 whitespace-nowrap font-medium text-slate-700">พฤ. 26 พ.ย. 2569</td>
                             <td class="py-3.5 px-4 font-semibold text-slate-800">วัดใหม่ไทยบำรุง</td>
-                            <td class="py-3.5 px-4 text-slate-600">ต.ป่าแฝก อ.กงไกรลาศ</td>
+                            <td class="py-3.5 px-4 text-slate-600">ป่าแฝก</td>
+                            <td class="py-3.5 px-4 text-slate-600">กงไกรลาศ</td>
+                            <td class="py-3.5 px-4 text-slate-600">สุโขทัย</td>
                         </tr>
                     </tbody>
                 </table>
@@ -134,6 +313,7 @@
         </div>
     </main>
 
+    <!-- Footer -->
     <footer class="bg-white border-t border-slate-200 mt-12 py-6 text-center text-xs text-slate-500">
         <p>สำนักงานพาณิชย์จังหวัดสุโขทัย | พัฒนาระบบเผยแพร่ประชาสัมพันธ์โครงการ</p>
     </footer>
