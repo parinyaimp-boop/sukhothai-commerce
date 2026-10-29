@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>โครงการ ไทยช่วยไทย ลดค่าครองชีพ จังหวัดสุโขทัย</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Sarabun', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col justify-between">
+
+    <header class="bg-gradient-to-r from-blue-700 to-indigo-800 text-white shadow-md">
+        <div class="max-w-4xl mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center space-x-4 text-center md:text-left">
+                <div class="bg-white p-2 rounded-full shadow-md flex items-center justify-center w-16 h-16 shrink-0 mx-auto md:mx-0">
+                    <svg class="w-10 h-10 text-blue-700" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                    </svg>
+                </div>
+                <div>
+                    <div class="text-xs font-semibold text-blue-200 tracking-wider uppercase">สำนักงานพาณิชย์จังหวัดสุโขทัย</div>
+                    <h1 class="text-xl md:text-2xl font-bold tracking-tight">ข้อมูลโครงการ "ไทยช่วยไทย ลดค่าครองชีพ"</h1>
+                </div>
+            </div>
+            <div class="bg-blue-900/60 border border-blue-400/30 px-4 py-2 rounded-xl text-center">
+                <span class="block text-xs text-blue-200">ปีงบประมาณ พ.ศ. 2570 (รอบที่ 2)</span>
+                <span class="font-bold text-amber-300 text-sm">ประจำเดือนพฤศจิกายน 2569</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-8 flex-grow w-full">
+        <div class="mb-6">
+            <input type="text" id="searchInput" placeholder="🔍 ค้นหาตามอำเภอ, ตำบล หรือสถานที่จัดงาน..." 
+                class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm text-sm"
+                onkeyup="filterTable()">
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+            <div class="p-4 bg-slate-100 border-b border-slate-200 font-bold text-slate-700 flex justify-between items-center">
+                <span>ตารางจุดจำหน่ายสินค้าราคาประหยัด</span>
+                <span class="text-xs text-slate-500 font-normal">ทั้งหมด 12 จุดบริการ</span>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse" id="scheduleTable">
+                    <thead>
+                        <tr class="bg-slate-50 text-slate-600 text-xs uppercase tracking-wider border-b border-slate-200">
+                            <th class="py-3 px-4 text-center">ครั้งที่</th>
+                            <th class="py-3 px-4">วันที่จัดงาน</th>
+                            <th class="py-3 px-4">สถานที่ / จุดจำหน่าย</th>
+                            <th class="py-3 px-4">ตำบล / อำเภอ</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100 text-sm">
+                        <tr class="hover:bg-blue-50/50 transition">
+                            <td class="py-3.5 px-4 text-center font-bold text-blue-600">1</td>
+                            <td class="py-3.5 px-4 whitespace-nowrap font-medium text-slate-700">อ. 4 พ.ย. 2569</td>
+                            <td class="py-3.5 px-4 font-semibold text-slate-800">ที่ว่าการอำเภอทุ่งเสลี่ยม</td>
+                            <td class="py-3.5 px-4 text-slate-600">ต.ทุ่งเสลี่ยม อ.ทุ่งเสลี่ยม</td>
+                        </tr>
+                        <tr class="hover:bg-blue-50/50 transition">
+                            <td class="py-3.5 px-4 text-center font-bold text-blue-600">2</td>
+                            <td class="py-3.5 px-4 whitespace-nowrap font-medium text-slate-700">จ. 9 พ.ย. 2569</td>
+                            <td class="py-3.5 px-4 font-semibold text-slate-800">องค์การบริหารส่วนตำบลวังน้ำขาว</td>
+                            <td class="py-3.5 px-4 text-slate-600">ต.วังน้ำขาว อ.บ้านด่านลานหอย</td>
+                        </tr>
+                        <tr class="hover:bg-blue-50/50 transition">
+                            <td class="py-3.5 px-4 text-center font-bold text-blue-600">3</td>
+                            <td class="py-3.5 px-4 whitespace-nowrap font-medium text-slate-700">อ. 10 พ.ย. 2569</td>
+                            <td class="py-3.5 px-4 font-semibold text-slate-800">องค์การบริหารส่วนตำบลทับผึ้ง</td>
+                            <td class="py-3.5 px-4 text-slate-600">ต.ทับผึ้ง อ.ศรีสำโรง</td>
+                        </tr>
+                        <tr class="hover:bg-blue-50/50 transition">
+                            <td class="py-3.5 px-4 text-center font-bold text-blue-600">4</td>
+                            <td class="py-3.5 px-4 whitespace-nowrap font-medium text-slate-700">พ. 11 พ.ย. 2569</td>
+                            <td class="py-3.5 px-4 font-semibold text-slate-800">องค์การบริหารส่วนตำบลบ้านสวน</td>
+                            <td class="py-3.5 px-4 text-slate-600">ต.บ้านสวน อ.เมืองสุโขทัย</td>
+                        </tr>
+                        <tr class="hover:bg-blue-50/50 transition">
+                            <td class="py-3.5 px-4 text-center font-bold text-blue-600">5</td>
+                            <td class="py-3.5 px-4 whitespace-nowrap font-medium text-slate-700">พฤ. 12 พ.ย. 2569</td>
+                            <td class="py-3.5 px-4 font-semibold text-slate-800">องค์การบริหารส่วนตำบลหนองกลับ</td>
+                            <td class="py-3.5 px-4 text-slate-600">ต.หนองกลับ อ.สวรรคโลก</td>
+                        </tr>
+                        <tr class="hover:bg-blue-50/50 transition">
+                            <td class="py-3.5 px-4 text-center font-bold text-blue-600">6</td>
+                            <td class="py-3.5 px-4 whitespace-nowrap font-medium text-slate-700">ศ. 13 พ.ย. 2569</td>
+                            <td class="py-3.5 px-4 font-semibold text-slate-800">สหกรณ์นิคมหนองบัว</td>
+                            <td class="py-3.5 px-4 text-slate-600">ต.หนองบัว อ.ศรีนคร</td>
+                        </tr>
+                        <tr class="hover:bg-blue-50/50 transition">
+                            <td class="py-3.5 px-4 text-center font-bold text-blue-600">7</td>
+                            <td class="py-3.5 px-4 whitespace-nowrap font-medium text-slate-700">จ. 16 พ.ย. 2569</td>
+                            <td class="py-3.5 px-4 font-semibold text-slate-800">องค์การบริหารส่วนตำบลบ้านแก่ง</td>
+                            <td class="py-3.5 px-4 text-slate-600">ต.บ้านแก่ง อ.ศรีสัชนาลัย</td>
+                        </tr>
+                        <tr class="hover:bg-blue-50/50 transition">
+                            <td class="py-3.5 px-4 text-center font-bold text-blue-600">8</td>
+                            <td class="py-3.5 px-4 whitespace-nowrap font-medium text-slate-700">อ. 17 พ.ย. 2569</td>
+                            <td class="py-3.5 px-4 font-semibold text-slate-800">องค์การบริหารส่วนตำบลสามพวง</td>
+                            <td class="py-3.5 px-4 text-slate-600">ต.สามพวง อ.คีรีมาศ</td>
+                        </tr>
+                        <tr class="hover:bg-blue-50/50 transition">
+                            <td class="py-3.5 px-4 text-center font-bold text-blue-600">9</td>
+                            <td class="py-3.5 px-4 whitespace-nowrap font-medium text-slate-700">พ. 18 พ.ย. 2569</td>
+                            <td class="py-3.5 px-4 font-semibold text-slate-800">องค์การบริหารส่วนตำบลวังตะคร้อ</td>
+                            <td class="py-3.5 px-4 text-slate-600">ต.วังตะคร้อ อ.บ้านด่านลานหอย</td>
+                        </tr>
+                        <tr class="hover:bg-blue-50/50 transition">
+                            <td class="py-3.5 px-4 text-center font-bold text-blue-600">10</td>
+                            <td class="py-3.5 px-4 whitespace-nowrap font-medium text-slate-700">พฤ. 19 พ.ย. 2569</td>
+                            <td class="py-3.5 px-4 font-semibold text-slate-800">องค์การบริหารส่วนตำบลนาขุนไกร</td>
+                            <td class="py-3.5 px-4 text-slate-600">ต.นาขุนไกร อ.ศรีสำโรง</td>
+                        </tr>
+                        <tr class="hover:bg-blue-50/50 transition">
+                            <td class="py-3.5 px-4 text-center font-bold text-blue-600">11</td>
+                            <td class="py-3.5 px-4 whitespace-nowrap font-medium text-slate-700">ศ. 20 พ.ย. 2569</td>
+                            <td class="py-3.5 px-4 font-semibold text-slate-800">เทศบาลตำบลเขาแก้วศรีสมบูรณ์</td>
+                            <td class="py-3.5 px-4 text-slate-600">ต.เขาแก้วศรีสมบูรณ์ อ.ทุ่งเสลี่ยม</td>
+                        </tr>
+                        <tr class="hover:bg-blue-50/50 transition">
+                            <td class="py-3.5 px-4 text-center font-bold text-blue-600">12</td>
+                            <td class="py-3.5 px-4 whitespace-nowrap font-medium text-slate-700">พฤ. 26 พ.ย. 2569</td>
+                            <td class="py-3.5 px-4 font-semibold text-slate-800">วัดใหม่ไทยบำรุง</td>
+                            <td class="py-3.5 px-4 text-slate-600">ต.ป่าแฝก อ.กงไกรลาศ</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 mt-12 py-6 text-center text-xs text-slate-500">
+        <p>สำนักงานพาณิชย์จังหวัดสุโขทัย | พัฒนาระบบเผยแพร่ประชาสัมพันธ์โครงการ</p>
+    </footer>
+
+    <script>
+        function filterTable() {
+            let input = document.getElementById("searchInput");
+            let filter = input.value.toLowerCase();
+            let table = document.getElementById("scheduleTable");
+            let tr = table.getElementsByTagName("tr");
+
+            for (let i = 1; i < tr.length; i++) {
+                let tdText = tr[i].textContent || tr[i].innerText;
+                if (tdText.toLowerCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
